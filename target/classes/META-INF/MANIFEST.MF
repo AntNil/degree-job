@@ -4,7 +4,7 @@ Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Anton Nilsson
 Implementation-Vendor-Id: se.newton.com.degreejob
 Build-Jdk: 1.8.0_161
-Implementation-URL: http://projects.spring.io/spring-boot/degree-job/
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/degree-job
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 
