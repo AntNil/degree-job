@@ -30,10 +30,10 @@ public class UserController {
 		
 		if(user != null) {
 			
-		return new ResponseEntity(user, HttpStatus.FOUND);
+		return new ResponseEntity<User>(user, HttpStatus.OK);
 		}
 		else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 	}
 	
