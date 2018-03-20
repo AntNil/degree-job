@@ -1,7 +1,5 @@
 package se.newton.project.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,34 +16,52 @@ import se.newton.project.DBModels.User;
 
 @Controller
 @CrossOrigin
-@RequestMapping(path="/user")
+@RequestMapping(path = "/user")
 public class UserController {
-	
+
 	@Autowired
 	private UserRepository userRepo;
-	
-	@GetMapping(path="/getUser")
+
+	@GetMapping(path = "/getUser")
 	public ResponseEntity<User> getUser(@RequestParam int id) {
 		User user = userRepo.findOne(id);
-		
-		if(user != null) {
-			
-		return new ResponseEntity<User>(user, HttpStatus.OK);
-		}
-		else {
+
+		if (user != null) {
+
+			return new ResponseEntity<User>(user, HttpStatus.OK);
+		} else {
 			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 	}
-	
-	@PostMapping(path="/createUser")
+
+	@PostMapping(path = "/createUser")
 	public ResponseEntity createUser(@RequestBody User user) {
 		try {
-			
-		userRepo.save(user);
-		return new ResponseEntity(HttpStatus.CREATED);
+
+			userRepo.save(user);
+			return new ResponseEntity(HttpStatus.CREATED);
+		} catch (Exception e) {
+			return new ResponseEntity(e, HttpStatus.BAD_REQUEST);
 		}
-		catch (Exception e) {
-			return new ResponseEntity(e ,HttpStatus.BAD_REQUEST);
+	}
+
+	@PostMapping(path = "/deleteUser")
+	public ResponseEntity deleteUser(@RequestParam int id) {
+		try {
+			userRepo.deleteById(id);
+			return new ResponseEntity(HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity(e, HttpStatus.BAD_REQUEST);
+		}
+	}
+
+	@PostMapping(path = "/updateUser")
+	public ResponseEntity updateUser(@RequestBody User user) {
+		try {
+			userRepo.save(user);
+			return new ResponseEntity(HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
 		}
 	}
 }
