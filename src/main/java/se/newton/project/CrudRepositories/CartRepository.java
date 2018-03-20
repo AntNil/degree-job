@@ -5,7 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import se.newton.project.DBModels.Cart;
-import se.newton.project.DBModels.User;
 
 public interface CartRepository extends CrudRepository<Cart, Integer> {
 
