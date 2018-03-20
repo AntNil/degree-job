@@ -15,6 +15,7 @@ public class ContactInformation {
 	private String street;
 	private String city;
 	private int postalCode;
+	private int userId;
 	
 	public int getContactInformationId() {
 		return contactInformationId;
@@ -46,6 +47,10 @@ public class ContactInformation {
 	public void setPostalCode(int postalCode) {
 		this.postalCode = postalCode;
 	}
-	
-	
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 }

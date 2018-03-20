@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import se.newton.project.DBModels.ContactInformation;
 
-public interface ContactInformationRepository extends CrudRepository<ContactInformation, Long> {
+public interface ContactInformationRepository extends CrudRepository<ContactInformation, Integer> {
 
 }

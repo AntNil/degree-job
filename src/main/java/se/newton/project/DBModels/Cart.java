@@ -17,6 +17,7 @@ public class Cart {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	private int cartId;
 	private int totalPrice;
+	private int userId;
 	
 	@ManyToMany(targetEntity = se.newton.project.DBModels.Grocery.class, cascade = CascadeType.ALL)
 	private List<Grocery> groceryList = new ArrayList();
@@ -43,5 +44,13 @@ public class Cart {
 
 	public void setGroceryList(List<Grocery> groceryList) {
 		this.groceryList = groceryList;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 }

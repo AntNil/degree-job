@@ -18,6 +18,7 @@ public class Grocery {
 	private String amountMeasurement;
 	private String price;
 	private String groceryCategories;
+	private int cartId;
 	
 	
 	public int getGroceryId() {
@@ -56,7 +57,16 @@ public class Grocery {
 	public void setGroceryCategory(String groceryCategory) {
 		this.groceryCategories = groceryCategory;
 	}
-	
-	
-	
+	public String getGroceryCategories() {
+		return groceryCategories;
+	}
+	public void setGroceryCategories(String groceryCategories) {
+		this.groceryCategories = groceryCategories;
+	}
+	public int getCartId() {
+		return cartId;
+	}
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
+	}
 }
